@@ -61,6 +61,7 @@ public class Main {
                     break;
 
                 case 5:
+                    gestor.guardarTareas();
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     break;
 
