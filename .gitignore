@@ -3,4 +3,4 @@
 *.iml
 target/
 .vscode/
-.out/
+out/
