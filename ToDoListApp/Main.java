@@ -12,13 +12,13 @@ public class Main {
             System.out.println("\n--- GESTOR DE TAREAS ---");
             System.out.println("1. Agregar tarea");
             System.out.println("2. Listar tareas");
-            System.out.println("3. Marcar completada (Pendiente)");
-            System.out.println("4. Eliminar tarea (Pendiente)");
+            System.out.println("3. Marcar completada");
+            System.out.println("4. Eliminar tarea");
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             
             opcion = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); // Limpiar el buffer
 
             switch (opcion) {
                 case 1:
@@ -40,12 +40,32 @@ public class Main {
                     }
                     break;
 
+                case 3:
+                    System.out.print("Número de la tarea a marcar como completada: ");
+                    int numCompletar = sc.nextInt() - 1;
+                    if (gestor.marcarCompletada(numCompletar)) {
+                        System.out.println("¡Tarea marcada como completada!");
+                    } else {
+                        System.out.println("Número de tarea inválido.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.print("Número de la tarea a eliminar: ");
+                    int numEliminar = sc.nextInt() - 1;
+                    if (gestor.eliminar(numEliminar)) {
+                        System.out.println("¡Tarea eliminada!");
+                    } else {
+                        System.out.println("Número de tarea inválido.");
+                    }
+                    break;
+
                 case 5:
-                    System.out.println("Saliendo del programa...");
+                    System.out.println("Saliendo del programa. ¡Hasta luego!");
                     break;
 
                 default:
-                    System.out.println("Opción no implementada o inválida.");
+                    System.out.println("Opción inválida.");
             }
         } while (opcion != 5);
         

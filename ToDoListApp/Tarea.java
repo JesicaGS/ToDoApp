@@ -21,7 +21,7 @@ public class Tarea {
 
     @Override
     public String toString() {
-        String estado = completada ? "[✔]" : "[ ]";
+        String estado = completada ? "[*]" : "[ ]";
         return estado + " " + descripcion;
     }
 }

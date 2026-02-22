@@ -16,4 +16,20 @@ public class GestorTareas {
     public List<Tarea> obtenerTareas() {
         return listaTareas;
     }
+
+    public boolean marcarCompletada(int indice) {
+        if (indice >= 0 && indice < listaTareas.size()) {
+            listaTareas.get(indice).setCompletada(true);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean eliminar(int indice) {
+        if (indice >= 0 && indice < listaTareas.size()) {
+            listaTareas.remove(indice);
+            return true;
+        }
+        return false;
+    }
 }
